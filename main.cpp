@@ -27,10 +27,11 @@ vector<Vertice> BFS(Grafo g, Vertex s) {
         fila.pop();
         vector<Vertex> aux = listaAdj[u.getNumVertice()];
         for (int i : aux) {
-            if (vertices[aux[i]].getCor() == 0) {
-                vertices[aux[i]].setCor(1);
-                vertices[aux[i]].setDistancia(u.getDistancia()+1);
-                vertices[aux[i]].setPredecessor(u.getNumVertice());
+            if (vertices[i].getCor() == 0) {
+                vertices[i].setCor(1);
+                vertices[i].setDistancia(u.getDistancia()+1);
+                vertices[i].setPredecessor(u.getNumVertice());
+                fila.push(vertices[i]);
             }
         }
         vertices[u.getNumVertice()].setCor(2);
@@ -47,6 +48,7 @@ int main() {
     grafo.inserirAresta(3,4);
     grafo.inserirAresta(4,5);
 
+    vector<Vertice> bfsResultado = BFS(grafo, 1);
 
     return 0;
 }
