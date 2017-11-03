@@ -23,8 +23,8 @@ void Grafo::mostrar() {
     for (int i = 1; i <= this->getOrdem(); i++){
         cout << "v[" << i << "] = ";
         vector<int> aux = adj[i];
-        for (int j = 0; j < aux.size(); j++) {
-            cout << aux[j] << ", ";
+        for (int x : aux) {
+            cout << x << ", ";
         }
         cout << endl;
     }
