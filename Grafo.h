@@ -1,6 +1,7 @@
 #ifndef BFS_GRAFO_H
 #define BFS_GRAFO_H
 
+#include <iostream>
 #include <vector>
 using namespace std;
 
